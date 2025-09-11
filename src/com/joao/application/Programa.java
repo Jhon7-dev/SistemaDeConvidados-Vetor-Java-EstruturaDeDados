@@ -19,7 +19,7 @@ public class Programa {
 		do {
 			
 		
-		System.out.println("==== FESTA SUMMER ELETRO ====");
+		System.out.println("==== FESTA SUMMER ELETROHITS ====");
 		System.out.println("Lista de Convidados");
 		System.out.println("1-Cadastrar convidados");
 		System.out.println("2-Listar todos os convidados");
@@ -29,14 +29,15 @@ public class Programa {
 		System.out.println("6-Remover convidado de uma posição");
 		System.out.println("7-Ver quantidade atual de convidados");
 		System.out.println("8-Sair");
-		System.out.println("=====================================");
-		System.out.println("");
+		System.out.print("DIGITE UMA OPÇÃO: ");
+		//System.out.println("=====================================");
+		//System.out.println("");
 	    op  = scn.nextInt();
 		scn.nextLine();
 		switch(op) {
 		case 1: {
 			System.out.println("=== Cadastros de convidados ===");
-			System.out.println("Digite o nome: ");
+			System.out.print("Digite o nome: ");
 			String nome = scn.nextLine();
 			vetor.adiciona(nome);
 			System.out.println("Nome cadastrado com sucesso!");
@@ -51,21 +52,28 @@ public class Programa {
 			System.out.println("Busca de convidados");
 			System.out.print("Digite o convidado pela posição: ");
 			int posicao = scn.nextInt();
-			System.out.println(vetor.busca(posicao)); 
-			System.out.println(vetor);
+			System.out.println("o convidado na posição " + posicao +" é " + vetor.busca(posicao)); 
+			//System.out.println(vetor);
 			break;
 		}
 		case 4:{	
 			System.out.println("Busca de convidado por nome");
-			System.out.print("Digete o nome: ");
+			System.out.print("Digete o nome do convidado: ");
 			String nome = scn.nextLine();
-			System.out.println(vetor.busca(nome));
-			System.out.println(vetor);
+			System.out.println("o convidado(a) " + nome + " encontra-se na posição "+vetor.busca(nome));
+		
 			break;
 		}
 		case 5:{
 			System.out.println("Inserir convidado em uma posição especifica");
-			System.out.println();
+			System.out.print("Digite a posicao do convidado: ");
+			int pos = scn.nextInt();
+		    scn.nextLine(); 
+			System.out.println("Digite o nome do convidado: ");
+			String nome = scn.nextLine();
+			vetor.adiciona(pos, nome);
+			System.out.println("convidado " + nome + "adicionado na posição " + pos);
+			System.out.println(vetor);
 			break;
 		}
 		case 6: {
@@ -74,13 +82,12 @@ public class Programa {
 			int pos = scn.nextInt();
 			scn.nextLine();
 			vetor.remove(pos);
-			System.out.println(vetor);
-			System.out.println();
+			System.out.println("convidado da posição " + pos + " removido com sucesso!");
 			break;
 		}
 		case 7:{
-			System.out.println("=== Quantidade de atual de convidados ====");
-			vetor.getTamanho();
+			System.out.println("Quantidade de atual de convidados " + vetor.getTamanho());
+			//System.out.println();
 			break;
 		}
 		case 8:{

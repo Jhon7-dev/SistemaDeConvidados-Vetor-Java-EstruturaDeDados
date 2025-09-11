@@ -61,10 +61,9 @@ public class Vetor {
 		this.tamanho --;
 	}
 		
-	//public void 
 	@Override
 	public String toString() {
-		return "Vetor [elementos=" + Arrays.toString(elementos) + ", tamanho=" + tamanho + "]";
+		return "Convidados " + Arrays.toString(elementos);
 	}
 
 	public String[] getElementos() {
